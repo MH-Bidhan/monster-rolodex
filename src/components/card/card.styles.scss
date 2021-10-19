@@ -1,0 +1,38 @@
+$--card-shadow: rgba(0, 0, 0, 0.5);
+$--card-background: #440025;
+$--card-title: #fff;
+$--card-subtitle: #fff;
+$--card-image-border: null;
+
+.card {
+  width: 100%;
+  max-width: 300px;
+  padding: 2rem;
+  overflow: hidden;
+  background-color: $--card-background;
+  border-radius: 10px;
+  transition: all ease-in 0.15s;
+  box-shadow: 0 0 20px 0 $--card-shadow;
+  text-align: center;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.card-image {
+  width: 80%;
+  border: $--card-image-border;
+  border-radius: 20px;
+  background-color: $--card-background;
+}
+
+.card-title {
+  font-size: 2.5rem;
+  color: $--card-title;
+}
+
+.card-subtitle {
+  font-size: 2rem;
+  color: $--card-subtitle;
+}
