@@ -1,0 +1,121 @@
+// Primary Colors
+$--color-primary: #0d6efd;
+$--content-primary: #fff;
+$--hover-primary: #0b5ed7;
+$--focus-primary: rgba(49, 132, 253, 0.5);
+
+// Secondary Colors
+$--color-secondary: #000;
+$--content-secondary: #fff;
+$--hover-secondary: #111;
+$--focus-secondary: rgba(0, 0, 0, 0.5);
+
+// Danger Indacating Colors
+$--color-danger: #dc3545;
+$--content-danger: #fff;
+$--hover-danger: #bb2d3b;
+$--focus-danger: rgba(220, 53, 69, 0.5);
+
+// Warning Indacating Colors
+$--color-warning: #ffc107;
+$--content-warning: #000;
+$--hover-warning: #ffca2c;
+$--focus-warning: rgba(255, 193, 7, 0.5);
+
+// Accent Indacating Colors
+$--color-accent: #fa8729;
+$--content-accent: #000;
+$--hover-accent: #d36308;
+$--focus-accent: rgba(250, 135, 41, 0.5);
+
+.btn {
+  border: 0;
+  width: 100%;
+  max-width: 350px;
+  margin: 2rem auto;
+  font-size: 2rem;
+  padding: 1.5rem 2rem;
+  cursor: pointer;
+  outline: 0;
+
+  transition: background-color ease-in 0.15s;
+}
+
+.btn-sm {
+  width: 80%;
+  max-width: 150px;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.btn-round-corner {
+  border-radius: 50px;
+}
+.btn-round-edge {
+  border-radius: 10px;
+}
+
+.btn-primary {
+  background-color: $--color-primary;
+  color: $--content-primary;
+
+  &:hover {
+    background-color: $--hover-primary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem $--focus-primary;
+  }
+}
+
+.btn-secondary {
+  background-color: $--color-secondary;
+  color: $--content-secondary;
+
+  &:hover {
+    background-color: $--hover-secondary;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem $--focus-secondary;
+  }
+}
+
+.btn-danger {
+  background-color: $--color-danger;
+  color: $--content-danger;
+
+  &:hover {
+    background-color: $--hover-danger;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem $--focus-danger;
+  }
+}
+
+.btn-warning {
+  background-color: $--color-warning;
+  color: $--content-warning;
+
+  &:hover {
+    background-color: $--hover-warning;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem $--focus-warning;
+  }
+}
+
+.btn-accent {
+  background-color: $--color-accent;
+  color: $--content-accent;
+
+  &:hover {
+    background-color: $--hover-accent;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 0.25rem $--focus-accent;
+  }
+}
