@@ -1,0 +1,13 @@
+.home {
+  text-align: center;
+}
+
+.logo {
+  color: #fff;
+  font-family: "Bigelow Rules", cursive;
+  font-size: 8rem;
+
+  @media screen and (min-width: 550px) {
+    font-size: 12rem;
+  }
+}
