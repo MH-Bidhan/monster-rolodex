@@ -1,10 +1,10 @@
 import React from "react";
-import Card from "./../components/card/card.component";
-import MonsterGrid from "./../components/monster-grid/monster-grid.component";
-import Pagination from "./../components/pagination/pagination.component";
-import SearchBox from "./../components/search-box/search-box.component";
-import monstersData from "./../data/data";
-import paginate from "./../functions/paginate";
+import Card from "./../../components/card/card.component";
+import MonsterGrid from "./../../components/monster-grid/monster-grid.component";
+import Pagination from "./../../components/pagination/pagination.component";
+import SearchBox from "./../../components/search-box/search-box.component";
+import monstersData from "./../../data/data";
+import paginate from "./../../functions/paginate";
 import "./monster-rolodex.styles.scss";
 
 class MonsterRolodex extends React.Component {
@@ -52,7 +52,7 @@ class MonsterRolodex extends React.Component {
           {monsterList.length === 0 ? (
             <p>No monster left in the database</p>
           ) : null}
-          {filtered.length === 0 ? <p>No match</p> : null}
+
           <MonsterGrid>
             {paginated.map((m) => (
               <Card
