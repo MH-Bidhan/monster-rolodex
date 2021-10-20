@@ -2,6 +2,7 @@ import React from "react";
 import Card from "./../components/card/card.component";
 import MonsterGrid from "./../components/monster-grid/monster-grid.component";
 import Pagination from "./../components/pagination/pagination.component";
+import SearchBox from "./../components/search-box/search-box.component";
 import monstersData from "./../data/data";
 import paginate from "./../functions/paginate";
 import "./monster-rolodex.styles.scss";
@@ -12,6 +13,7 @@ class MonsterRolodex extends React.Component {
 
     this.state = {
       monsterList: [...monstersData],
+      searchFeild: "",
       currentPage: 1,
       itemsPerPage: 8,
     };
@@ -30,13 +32,27 @@ class MonsterRolodex extends React.Component {
     this.setState({ currentPage });
   };
 
+  onSearch = (e) => {
+    const searchFeild = e.target.value.toLowerCase();
+
+    this.setState({ searchFeild });
+  };
+
   render() {
-    const { monsterList, currentPage, itemsPerPage } = this.state;
-    const paginated = paginate(monsterList, currentPage, itemsPerPage);
+    const { monsterList, currentPage, itemsPerPage, searchFeild } = this.state;
+    const filtered = monsterList.filter((m) =>
+      m.name.toLowerCase().includes(searchFeild)
+    );
+    const paginated = paginate(filtered, currentPage, itemsPerPage);
     return (
       <div className="home">
         <div className="container">
           <h1 className="logo">Monster Rolodex</h1>
+          <SearchBox onChange={this.onSearch} />
+          {monsterList.length === 0 ? (
+            <p>No monster left in the database</p>
+          ) : null}
+          {filtered.length === 0 ? <p>No match</p> : null}
           <MonsterGrid>
             {paginated.map((m) => (
               <Card
@@ -48,7 +64,7 @@ class MonsterRolodex extends React.Component {
           </MonsterGrid>
           <Pagination
             currentPage={currentPage}
-            numberOfItems={monsterList.length}
+            numberOfItems={filtered.length}
             itemsPerPage={itemsPerPage}
             onPageChange={this.handlePageChange}
           />
