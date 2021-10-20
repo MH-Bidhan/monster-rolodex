@@ -1,0 +1,18 @@
+.monster-grid {
+  display: grid;
+  justify-items: center;
+  justify-self: center;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5rem 3rem;
+
+  @media (max-width: 1460px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 1000px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 600px) {
+    grid-template-columns: 1fr;
+  }
+}

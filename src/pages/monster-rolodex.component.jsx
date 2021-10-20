@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "./../components/card/card.component";
+import MonsterGrid from "./../components/monster-grid/monster-grid.component";
 import monstersData from "./../data/data";
 import "./monster-rolodex.styles.scss";
 
@@ -25,13 +26,15 @@ class MonsterRolodex extends React.Component {
       <div className="home">
         <div className="container">
           <h1 className="logo">Monster Rolodex</h1>
-          {monsterList.map((m) => (
-            <Card
-              key={m.id}
-              content={m}
-              onDelete={() => this.handleDelete(m)}
-            />
-          ))}
+          <MonsterGrid>
+            {monsterList.map((m) => (
+              <Card
+                key={m.id}
+                content={m}
+                onDelete={() => this.handleDelete(m)}
+              />
+            ))}
+          </MonsterGrid>
         </div>
       </div>
     );
